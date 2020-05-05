@@ -1,0 +1,86 @@
+@charset "utf-8";
+* { box-sizing: border-box;}
+/*-----------------------------------------------------------본문 */
+textarea {padding-top:5px;} 
+#containerAll {
+	display: flex;
+  justify-content: center;
+  position: relative;
+  padding-top: 50px;
+}
+#frm { width: 700px; padding-bottom: 200px; }
+#frm h2 { 
+	text-align: center; color: gray;
+	padding-bottom: 20px; }
+#frm label {  display: inline-block; }
+#frm .contentsBox { display:flex; padding: 2px 0; width:100% }
+#frm .writeInfo .col-1,
+#frm .writeInfo .col-2, #frm .writeInfo .col-4-1,
+#frm .contentsBox .col-4-2 {height: 27px;}
+
+#frm .contentsBox .col-1 { 
+	width:20%;  
+	letter-spacing: 10px; 
+  margin-right: 5px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+	box-shadow: 0 2px 4px 0 rgba(181,181,181,.7);
+	font-weight: bold;
+}
+#frm .contentsBox .col-2 { width:80%; 
+box-shadow: 0 2px 4px 0 rgba(181,181,181,.7); }
+#frm .contentsBox .col-3-1 { width:60%; padding-left: 5px;
+box-shadow: 0 2px 4px 0 rgba(181,181,181,.7); }
+#frm .contentsBox .col-3-2 { width:20%;
+box-shadow: 0 2px 4px 0 rgba(181,181,181,.7);}
+#frm .contentsBox .col-3-2 .col-4-1 { 
+  width:48%; height: 100%; text-align: center; 
+  margin-left: 2%;
+/* 	background: rgba(194, 197, 202, 0.87); */
+	box-shadow: 0 2px 4px 0 rgba(181,181,181,.7);
+}
+#frm .contentsBox .col-3-2 .col-4-2 { 
+  width:50%; text-align: center;
+  border-collapse : collapse;
+  float: right;
+/*   border:1px solid gray;  */
+	box-shadow: 0 2px 4px 0 rgba(181,181,181,.7);
+}
+.btn {margin: 0 3px;}
+#btnContainer {	
+	width:100%; 
+	height: 30px;
+	margin: 20px 0; }
+#btnWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.addfileBox {
+	width: 80%;
+	box-shadow: 0 2px 4px 0 rgba(181,181,181,.7);
+/* 	display: inline-block;
+  border: 1px solid gray; */
+} 
+.fileList {
+	color: gray;
+	text-decoration: none;
+}
+#fileList {width: 550px;}
+#fileList img {width: 100%;}
+
+.comment {
+	width:90%; height: 80px;
+	padding-top:5px;
+	box-shadow: 0 2px 4px 0 rgba(181,181,181,.7);
+}
+
+
+.errBox {
+/* 	display: flex;
+  justify-content: center; */
+  margin-left: 11em;
+	color : red;
+  font-size : 0.8rem;
+  font-weight : bold;
+}

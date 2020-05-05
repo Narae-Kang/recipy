@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+* { 
+	box-sizing: border-box;
+}
+/* #container {
+ 	height: 500px;
+ 	position: relative;
+  display: flex;
+  justify-content: center; 
+  margin-top: 200px;
+}  */
+#container {
+  /* ------------------------------------화면 중간으로 넣기 */
+  display: flex;
+  justify-content: center;
+	padding-top: 100px;
+}
+
+.login_wrapper {
+  /* ------------------------------------입력창과 로그인 버튼 총길이 */
+  width: 400px;
+}
+.login_content {
+  display: flex;
+  justify-content: center;
+}
+.login_content>div {
+  margin: 30px 10px 10px 0px;
+}
+#id {
+  width: 250px;
+}
+.login_content input {
+  /* ------------------------------------입력창을 총길이의 100%로 해라 */
+  width: 100%;
+  border: 1px solid gray;
+  /* ------------------------------------폼들 사이 간격 */
+  margin: 4px 0;
+  float: right;
+}
+
+.login_content input[type="submit"] {
+  /* ------------------------------------로그인 버튼이 width값 전체로 */
+  width: 75px;
+  height: 60px;
+  /* background-color: rgba(117, 124, 116, 0.884); */
+  background-color: #7b7b81;
+  color: white;
+  font-weight: 900;
+}
+
+.login_title {
+  text-align: center;
+}
+#id, #pw, #loginBtn {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#loginForm {
+  padding: 0px 10px 0px 10px;
+}
+.find_info {
+  font-size: 14px;
+  color: gray;
+  text-align: center;
+  padding: 10px 0px 25px 180px;
+}
+.find_info>a {
+  text-decoration: none;    
+  color: gray;
+}
+.memberjoin {
+  font-size: 0.8rem;
+  color: gray;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid gray;
+}
+.memberjoin>a {
+  text-decoration: none;    
+  color: gray;
+  padding-left: 30px;
+}
+
+.find_info>a:hover,
+.memberjoin>a:hover {
+  text-decoration: underline;
+  color: #FF86A4;
+}
+
+/*오류 메시지*/
+.errmsg {
+  color : red;
+  font-size : 0.7rem;
+  font-weight : bold;
+}
+
+
+

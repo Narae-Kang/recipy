@@ -1,0 +1,235 @@
+@charset "utf-8";
+
+* { 
+	box-sizing: border-box;
+}
+html, body {
+  margin: 0; 
+  padding: 0;
+  height: 100%;
+  background-color: white;
+}
+section {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+.logo {
+	  width: 180px;
+}
+
+
+/* -------------------------------------- 헤더  */
+.header_container {
+  width: 100%;
+  height: 100px;
+  background-color: black;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+}
+.header_wrapper {
+  width: 1024px;
+  height: 130px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header_logo {
+  display: inline-block;
+  flex-grow: 0;
+  flex-shrink: 1; 
+  flex-basis: 100px;
+} 
+/* -------------------------------------- 헤더 메뉴*/
+nav  ul, nav  ul  ul { padding: 0; }
+.menu_list {
+  position: relative;
+  width: 1000px;
+  display: inline-block;
+  list-style: none;   /*앞에 마크 없애기*/
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Jua', sans-serif;
+  /* font-weight: bold; */
+}
+.list4 {
+  padding: 0;
+}
+ul li {
+  display: inline-block;
+  padding-left: 0.5em;
+  padding-right: 3em;
+}
+header > nav > ul > li {
+  position: relative;
+}  
+ul li a {
+  color: white;
+  text-decoration: none;
+}
+.menu_forms{
+  float: right;
+  padding-right: 2em;
+}
+.menu.list5, .menu.list6, .menu.list7 {
+	font-family: 'Nanum Gothic', sans-serif;
+  font-size: 0.7em;
+  font-weight: normal;
+  padding: 0;
+  padding-right: 3px;
+}
+/* -------------------------------------- 서브메뉴 */
+nav > ul > li:hover > a,   
+nav > ul > li:active > a{   
+  color: goldenrod;
+}
+.submenu {
+  position: absolute;
+  font-size: 0.8em;
+}
+nav ul ul {
+  display:none; 
+  position: absolute;
+  /* box-shadow: 2px 2px 2px 2px rgba(0,0,0,.3); */
+  min-width: 160px;
+  z-index: 1;
+  /* top: 25px;  */
+}
+.submenu.sublist1{
+  left: -20px;
+}
+.submenu.sublist2{
+  left: -25px;
+}
+.submenu.sublist3{
+  left: 0;
+}
+
+nav ul ul li {
+  display: block;
+  padding: 0;
+}
+
+nav ul ul a {
+  display: block;
+  width: 120px;
+  padding: 2px 0px 2px 10px;
+  line-height: 30px;
+  font-weight: 400;   /* 기본 굵기 */
+  opacity: 0.6;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+  transition: all .3s;
+}
+nav ul ul a:hover,  /* 마우스 위로가져갔을때 */
+nav ul ul a:focus{ /* tab키 눌렀을때 */
+  background-color: #f4f4f4;
+  opacity: 1;
+}
+nav > ul > li:hover ul{
+  display:block;
+  z-index: 1;
+}
+li.smallFont {
+  /* salad&others 폰트 */
+  font-size: 0.5;
+}
+
+/* ----------------------------------모바일용 서브 메뉴 설정 */
+#mobile {
+  position: fixed;
+  top:0px; left: -250px;  
+  z-index:1000;
+  padding: 100px 0 0 50px;
+  height:100%; width:200px; 
+  background-color: #FF86A4;
+  transition: left .5s;
+}
+#mobile a{
+  display:block;
+  width: 100px;
+  line-height: 60px;
+  font-family: 'Jua', sans-serif;
+  border-bottom: 2px dotted black;
+}
+#mobile.active {
+  left:0px;
+}
+.header_container .tab{
+  display:none;
+  position: absolute;
+  left:0; top:0;
+  width:40px; height:40px;
+}
+/* -------------------------------------- 미디어쿼리 : 태블릿 */
+
+@media screen and (max-width:1023px) {
+  /* ---------- 태블릿 헤더 ---------- */
+  .header_wrapper {
+    width: 768px;
+  }
+  .header_wrapper .menu_list {
+    width: 600px;
+    font-size: 1.1em;
+  }
+.menu {
+  padding: 0;
+  margin-left: 1.7em;
+}
+  ul li {
+    display: inline-block;
+  }
+  ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  .menu_forms{
+    float: right;
+  }
+  .menu.list5, .menu.list6, .menu.list7 {
+    font-size: 0.6em;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+  }
+nav ul ul a {
+  display: block;
+  width: 100px;
+  line-height: 30px;
+  font-weight: 400; 
+}
+.note_box img {
+  height: 70%;
+}  
+
+/* -------------------------------------- 미디어쿼리 : 모바일 */
+@media screen and (max-width:767px) {
+  /* ---------- 모바일 헤더 ---------- */
+
+  .header_wrapper {
+    display: none;
+  }
+/*   .header_container .tab { 
+    display: block;
+    margin: 10px;
+  }
+  .submenu2 {
+    top: 0; left: 109px;
+  }
+  #mobile ul li ul li a{
+    line-height: 57px;
+    border-bottom: 1px dotted black;
+  } */
+
+
+
+
+
+

@@ -1,0 +1,453 @@
+@charset "utf-8";
+/*  * {
+  outline:1px solid black;
+} */ 
+
+body {
+  font-family: 'Gothic A1', sans-serif;
+  font-weight: bold;
+}
+pre {
+  font-family: 'Gothic A1', sans-serif;
+  margin: 5px;
+}
+header {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px; 
+}
+/* ------------------------------------------------ 인포메이션 */
+.classInfo {
+	margin-bottom: 1em;
+}
+.infoBox {
+ 	text-align: center; 
+	display: flex;
+	margin: 5px 0;
+	padding: 5px 0;
+  align-items: center;
+	
+}
+.infoTitle {
+	text-align: center;
+ 	box-sizing: border-box;
+	width: 30%;
+  float: left;
+/* 	background-color: ivory;	 */
+}
+.information {
+	box-sizing: border-box;
+	width: 70%;
+	margin-left: 50px;
+/* 	background-color: ivory; */
+}
+/* ------------------------------------------------ 전체 폼 조작 */
+/* form {
+  margin-top:50px; 
+} */
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: -10px;
+}
+.content{
+  display:flex;
+  flex-direction: column;
+  width: 350px;      /* 전체 길이*/
+  height:600px;
+  margin-top: 40px;
+}
+/* ------------------------------------------------ 타이틀 */
+h2 {
+  margin: 0 0 20px 0;
+}
+.ast {
+  color: red;
+}
+.caution {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 12px;
+  float: right;
+  margin: 15px 0px 10px 0px;
+}
+/* ------------------------------------------------ 입력 폼 */
+.formSet {
+  display: inline-block;
+  padding-top: 30px;
+  border-top: 1px solid gray;
+}
+.formBox {
+  height: 30px;
+}
+.checkBox {
+	width: 80px;
+	height: 30px;
+	margin-left: 150px;
+}
+.err_form {
+  width: 300px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+.input_form {
+  float: right;
+  border:1px solid gray;
+  padding-left:5px;
+  margin-right: 2px;
+  background-color:white;
+  border-radius: 5px;
+  width: 200px;
+}
+input { 
+  width: 190px;
+  height: 25px;
+  border:none;
+}
+input[type=radio] {
+  width:auto;
+  height:auto;
+}
+# check{
+  display: flex;
+  justify-content: center;
+}
+
+
+button{ 
+  /* 버튼 길이*/
+  width: 200px;
+  height: 40px;
+  border:none;
+  border-radius: 5px;
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+}
+#button {
+  display: flex;
+  justify-content: center;
+}
+#resBtn {
+  background-color: navy;
+  border-radius: 5px;
+  color:white;
+  font-weight:900;
+  height:30px;
+  margin-left: 10px;
+}
+.input_choice {
+  display: inline-block;
+  float: none;
+  margin-left: 7px;
+  height: 25px; 
+}
+#region {
+  font-size: 12px;
+}
+.label{
+  display: inline-block;
+  vertical-align: center;
+  width: 120px;
+  font-size: 14px;
+}
+i{
+  padding:5px 4px;
+}
+
+.errmsg {
+  color:red;
+  font-size:0.7rem;
+  font-weight:bold; 
+  width: 300px;       
+  height: 100px;
+}
+
+
+  /* -------------------------- 브라우저 헤더 ----------------------- */
+.header_container {
+  width: 100%;
+  height: 100px;
+  background-color: black;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+}
+.header_wrapper {
+  width: 1024px;
+  height: 130px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header_logo {
+  display: inline-block;
+  flex-grow: 0;
+  flex-shrink: 1; 
+  flex-basis: 100px;
+} 
+/* -------------------------------------- 헤더 메뉴*/
+nav  ul, nav  ul  ul { padding: 0; }
+.menu_list {
+  position: relative;
+  width: 1000px;
+  display: inline-block;
+  list-style: none;   /*앞에 마크 없애기*/
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Jua', sans-serif;
+}
+ul li {
+  display: inline-block;
+  padding-left: 0.5em;
+  padding-right: 3em;
+}
+header > nav > ul > li {
+  position: relative;
+}  
+ul li a {
+  color: white;
+  text-decoration: none;
+}
+.menu_forms{
+  float: right;
+  padding-right: 2em;
+}
+.menu.list5, .menu.list6, .menu.list7 {
+font-family: 'Nanum Gothic Coding', monospace;
+ 	font-weight: lighter; 
+  font-size: 0.7em;
+  font-weight: normal;
+  padding: 0;
+  padding-right: 5px;
+}
+/* -------------------------------------- 서브메뉴 */
+nav > ul > li:hover > a,   
+nav > ul > li:active > a{   
+  color: goldenrod;
+}
+.submenu {
+  position: absolute;
+  font-size: 0.8em;
+}
+nav ul ul {
+  display:none; 
+  position: absolute;
+  z-index: 1;
+}
+.submenu.sublist1{
+  left: 5px;
+}
+.submenu.sublist2{
+  left: 0px;
+}
+.submenu.sublist3{
+  left: 30px;
+}
+
+nav ul ul li {
+  display: block;
+  padding: 0;
+}
+
+nav ul ul a {
+  display: block;
+  min-width: 50px;
+  padding: 2px 35px 2px 35px;
+  line-height: 30px;
+  font-weight: 400;   /* 기본 굵기 */
+  opacity: 0.6;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+  transition: all .3s;
+}
+ nav ul .sublist2 a{
+  padding: 2px 10px 2px 10px;
+} 
+nav ul ul a:hover,  /* 마우스 위로가져갔을때 */
+nav ul ul a:focus{ /* tab키 눌렀을때 */
+  background-color: #f4f4f4;
+  opacity: 1;
+}
+nav > ul > li:hover ul{
+  display:block;
+  z-index: 1;
+}
+li.smallFont {
+  /* salad&others 폰트 */
+  font-size: 0.5;
+}
+/* -------------------------------------- 푸터 */
+.footer_container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 160px;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.footer_wrapper {
+	position: absolute;
+  bottom: 0;
+  width: 1024px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9em;
+}
+.footer_logo {
+  display: inline-block;
+  flex-grow: 0;
+  flex-shrink: 1; 
+  flex-basis: 100px;
+  padding-right: 50px;
+}
+.footer_menu {
+  display: flex;
+  flex-direction: column;
+}
+.footer_menu1 {
+  color: white;
+  padding: 0;
+}
+/* ----------------------------------모바일용 서브 메뉴 설정 */
+#mobile {
+  position: fixed;
+  top:0px; left: -250px;  
+  z-index:1000;
+  padding: 100px 0 0 50px;
+  height:100%; width:200px; 
+  background-color: #6b757c;
+  transition: left .5s;
+}
+#mobile a{
+  display:block;
+  width: 100px;
+  line-height: 60px;
+  font-family: 'Jua', sans-serif;
+  border-bottom: 2px dotted black;
+}
+#mobile.active {
+  left:0px;
+}
+.header_container .tab{
+  display:none;
+  position: absolute;
+  left:0; top:0;
+  width:40px; height:40px;
+}
+/* -------------------------------------- 미디어쿼리 : 태블릿 */
+
+@media screen and (max-width:1023px) {
+  /* ---------- 태블릿 헤더 ---------- */
+  .header_wrapper {
+    width: 768px;
+  }
+  .header_wrapper .menu_list {
+    width: 600px;
+    font-size: 1.1em;
+  }
+.menu {
+  padding: 0;
+  margin-left: 1.7em;
+}
+  ul li {
+    display: inline-block;
+  }
+  ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  .menu_forms{
+    float: right;
+  }
+  .menu.list5, .menu.list6, .menu.list7 {
+    font-size: 0.6em;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+  }
+	nav ul ul a {
+	  display: block;
+	  width: 100px;
+	  line-height: 30px;
+	  font-weight: 400; 
+	}
+	.note_box img {
+	  height: 70%;
+	}  
+	  /* ---------- 태블릿 푸터 ---------- */
+	  .footer_container {
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+	  position: absolute;
+	  bottom: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer_wrapper {
+    width: 768px;
+    height: 150px;
+  }
+  .footer_menu1 {
+    color: white;
+    padding: 0;
+  }
+  .footer_logo {
+    padding-right: 20px;
+  }
+  footer ul li {
+    padding-right: 1em;
+  }
+}
+
+/* -------------------------------------- 미디어쿼리 : 모바일 */
+@media screen and (max-width:767px) {
+  /* ---------- 모바일 헤더 ---------- */
+
+  .menu_list {
+    display: none;
+  }
+  
+  /* ---------- 모바일 푸터 ---------- */
+    .footer_logo {
+    display: none;
+  }
+  .footer_container {
+	  position: absolute;
+	  bottom: 0;
+  }
+  .footer_wrapper {
+    width: 320px;
+    font-size: 0.7em;
+  }
+  footer  ul  li {
+    padding: 0; margin: 0;
+    margin-right: 15px;
+  }
+}
+/*   .header_container .tab { 
+    display: block;
+    margin: 10px;
+  }
+  .submenu2 {
+    top: 0; left: 109px;
+  }
+  #mobile ul li ul li a{
+    line-height: 57px;
+    border-bottom: 1px dotted black;
+  } */

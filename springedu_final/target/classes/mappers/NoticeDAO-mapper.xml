@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.NoticeDAO-mapper">
+
+	<!-- 게시글작성 -->
+	<insert id="noticeWrite"  
+					parameterType="NoticeVO">
+		INSERT INTO notice (
+		  nnum,    
+		  ntitle,  
+		  nid,      
+		  nnickname,
+		  ncontent
+		) VALUES (
+		  notice_nnum_seq.nextval,  
+		  #{ntitle},  
+		  #{nid},  
+		  #{nnickname},
+		  #{ncontent}
+		)	
+		<selectKey keyProperty="nnum" resultType="long" order="AFTER">
+			select notice_nnum_seq.currval from dual
+		</selectKey>
+	</insert>
+	
+	<!-- 게시글수정 -->
+	<update id="noticeModify"
+					parameterType="NoticeVO">
+		update notice	
+			 set ntitle    = #{ntitle},
+			 		 ncontent  = #{ncontent},
+					 nudate    = systimestamp	 		 
+		 where nnum      = #{nnum}
+	</update>
+		
+	<!-- 게시글삭제 -->
+	<delete id="noticeDelete" parameterType="long">
+		delete from notice where nnum = #{nnum}
+	</delete>
+	
+	<!-- 게시글보기 -->
+	<select id="noticeView" 
+					parameterType="long"
+					resultType="NoticeVO">
+		SELECT
+		  nnum,
+		  ntitle,
+		  nid,
+		  nnickname,
+		  ncdate,
+		  nhit,
+		  ncontent
+		FROM
+		  notice
+		WHERE 
+			nnum 		 = #{nnum}
+	</select>
+	
+	<!-- 조회수 +1증가 -->
+	<update id="noticeUpdateHit" 
+					parameterType="long">
+	
+		update notice
+			 set nhit = nhit + 1
+		 where nnum = #{nnum}
+	</update>
+	<!-- 게시글목록 -->
+	<!-- 1)전체 -->
+	<select id="noticeList"
+					resultType="NoticeVO">
+<!-- 		SELECT
+		  nnum,
+		  ntitle,
+		  nid,
+		  nnickname,
+		  ncdate,
+		  nhit,
+		  ncontent
+		FROM
+		  notice -->
+		SELECT
+		  nnum,
+		  ntitle,
+		  nnickname,
+		  ncdate,
+		  nhit
+		FROM
+		  notice
+		order by nnum desc
+	</select>		  
+	<!-- 2)검색어 없는 게시글페이징 -->
+	
+	<!-- 3)검색어 있는 게시글검색(전체,제목,내용,작성자ID,별칭) -->
+	<select id="noticeList3"
+					parameterType="map"
+					resultType="NoticeVO">
+         select nnum,
+                ntitle,
+                nid,
+                nnickname,
+                ncdate,
+                nhit
+           from (select row_number() over(order by nnum desc) as num, 
+                     nnum,
+                     ntitle,
+                     nid,
+                     nnickname,
+                     ncdate,
+                     nudate,
+                     nhit
+                from notice 
+     <if test="searchType != null and noticeList != null"> 
+   		and
+	 		<foreach item="item" collection="noticeList"
+	 			open="(" separator="or" close=")">   		
+      <choose>
+      	<!-- 제목+내용 -->
+      	<when test="searchType == 'TC'.toString()">
+      		ntitle 	 like  '%'||#{item}||'%' or ncontent like  '%'||#{item}||'%' 
+      	</when>
+      	<!-- 제목 -->
+      	<when test="searchType == 'T'.toString()">
+      		ntitle 	 like '%'||#{item}||'%'             	
+      	</when>
+      	<!-- 내용 -->
+      	<when test="searchType == 'C'.toString()">
+      		ncontent like '%'||#{item}||'%'             	
+      	</when>               	
+      	<!-- 작성자(별칭) -->
+      	<when test="searchType == 'N'.toString()">
+      		nnickname like '%'||#{item}||'%'                	
+      	</when>                 	
+      	<!-- 아이디 -->
+      	<when test="searchType == 'I'.toString()">
+      		nid like '%'||#{item}||'%'                	
+      	</when>   
+      	<!-- 전체 -->              	
+       <otherwise>
+      			 ntitle 	 	like '%'||#{item}||'%' 
+          or ncontent 	like '%'||#{item}||'%'                    
+          or nnickname 	like '%'||#{item}||'%' 
+          or nid 				like '%'||#{item}||'%' 
+       </otherwise>
+      </choose>
+      </foreach>  
+     </if>  
+              )                            
+      where num between #{startRec} and #{endRec}    
+	</select>
+	
+		<!-- 4) 메인화면! -->
+	<select id="noticeMain"
+					resultType="NoticeVO">
+		SELECT
+		  ntitle,
+		  ncdate
+		FROM
+		  notice
+		order by nnum desc
+	</select>	
+	
+
+	<!-- 총 레코드수 -->
+	<select id="noticeTotalRecordCount"
+					parameterType="map"
+					resultType="int">
+		select count(nnum) as totalcnt
+      from notice
+     <if test="searchType != null and noticeList != null"> 
+   		and
+	 		<foreach item="item" collection="noticeList"
+	 			open="(" separator="or" close=")">   		
+      <choose>
+      	<!-- 제목+내용 -->
+      	<when test="searchType == 'TC'.toString()">
+      		ntitle 	 like  '%'||#{item}||'%' or ncontent like  '%'||#{item}||'%' 
+      	</when>
+      	<!-- 제목 -->
+      	<when test="searchType == 'T'.toString()">
+      		ntitle 	 like '%'||#{item}||'%'             	
+      	</when>
+      	<!-- 내용 -->
+      	<when test="searchType == 'C'.toString()">
+      		ncontent like '%'||#{item}||'%'             	
+      	</when>               	
+      	<!-- 작성자(별칭) -->
+      	<when test="searchType == 'N'.toString()">
+      		nnickname like '%'||#{item}||'%'                	
+      	</when>                 	
+      	<!-- 아이디 -->
+      	<when test="searchType == 'I'.toString()">
+      		nid like '%'||#{item}||'%'                	
+      	</when>   
+      	<!-- 전체 -->              	
+       <otherwise>
+      			 ntitle 	 	like '%'||#{item}||'%' 
+          or ncontent 	like '%'||#{item}||'%'                    
+          or nnickname 	like '%'||#{item}||'%' 
+          or nid 				like '%'||#{item}||'%' 
+       </otherwise>
+      </choose>
+      </foreach>  
+     </if>                        
+	</select>
+	
+</mapper>

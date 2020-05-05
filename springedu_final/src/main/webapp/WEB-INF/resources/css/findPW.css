@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+* { box-sizing: border-box; }
+#findPWcontainer {
+  display: flex;
+  justify-content: center;
+	padding-top: 120px;
+}
+.content {  width: 400px;	}
+tr > td .col-1 { width: 30%; } 
+tr > td .col-2 { width: 70%; } 
+.contentWrapper {
+	display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+label{
+  display: inline-block;
+  vertical-align: center;
+  width: 120px;
+  font-size: 14px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.title {
+  text-align: center;
+  border-bottom: 1px solid gray;
+}
+input {
+  width: 100%;
+  height: 100%;
+  border:none;
+  padding: 5px 0px;
+}
+.input_form {
+	float: right;
+  border:1px solid gray;
+  background-color:white;
+  border-radius: 5px;
+}
+tr.hide {  display: none;	}
+tr>th {
+  text-align: right;
+  padding-right: 10px;
+  min-width: 100px;
+}
+tr>td {
+  min-width: 200px;
+  padding: 3px;
+  margin: 5px; 
+}
+
+#birth {	padding: 2.5px 0px;	}
+
+#findBtnContainer {
+	width: 100%;
+}  
+#findBtn {
+	width: 200px;
+	height: 40px;
+	display: flex;
+  justify-content: center;
+  background-color: #7b7b81;
+  border-radius: 5px;
+  color: white;
+  font-weight: 900;
+  margin-left: 100px
+}
+.buttonForm {
+	border-top: 1px solid gray;
+	padding-top: 20px;
+}
+#pwChk_errmsg {	margin-bottom: 20px;	}
+.errmsg {
+  color: red;
+  font-size: 0.7rem;
+  font-weight: bold;
+  width: 300px;
+  padding: 3px 0 7px 10px;
+}
+

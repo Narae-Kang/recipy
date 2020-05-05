@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+* { box-sizing: border-box; }
+  /* ------------------------------------화면 중간으로 넣기 */
+.container {
+  display: flex;
+  justify-content: center;
+	padding-top: 100px;
+}
+.find_wrapper {
+  /* ------------------------------------입력창과 로그인 버튼 총길이 */
+  width: 400px;
+}
+.find_content {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding: 10px 0px 10px 0px;
+}
+.content1 {
+	width: 100%;
+} 
+.findIDForm {
+	width: 100%; 
+	display: flex;
+	justify-content: center;
+}
+.findIDForm1, .findIDForm2 {
+	display: block;
+	width: 50%;
+} 
+.inputs {
+	float: right;
+}
+
+.find_content input {
+  /* ------------------------------------입력창을 총길이의 50%로 해라 */
+  width: 200px;
+  border: 1px solid gray;
+  /* ------------------------------------폼들 사이 간격 */
+  margin: 5px 0;
+}
+#findIDBtn {
+	width: 200px;
+	height: 40px;
+	display: flex;
+  justify-content: center;
+  background-color: #7b7b81;
+  border-radius: 5px;
+  color: white;
+  font-weight: 900;
+  margin-left: 100px; 
+}
+.content2 {	 padding-top: 20px;	}
+.find_title {  text-align: center;	}
+
+#tel, #birth, #id, #findIDBtn {
+  padding: 5px;
+  border-radius: 5px;
+}
+#tel, #birth, #id {
+  height: 30px;
+  border-radius: 5px;
+}
+.find_info {
+  font-size: 0.8rem;
+  color: gray;
+  text-align: center;
+  padding-top: 15px;
+}
+.find_info>a {
+  text-decoration: none;    
+  color: gray;
+  text-align: center;
+}
+.find_info>a:hover,
+.memberjoin>a:hover {
+  text-decoration: underline;
+  color: gray;
+}
+
+/*오류 메시지*/
+.errmsg {
+  color : red;
+  font-size : 0.7rem;
+  font-weight : bold;
+  padding: 3px 0 7px 10px;
+}
+

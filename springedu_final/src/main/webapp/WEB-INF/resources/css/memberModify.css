@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* ------------------------------------------------ 전체 폼 조작 */
+form {
+  margin-top:50px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  font-family: 'Gothic A1', sans-serif;
+  font-weight: bold;
+}
+.content{
+  display:flex;
+  flex-direction: column;
+  width: 310px;      /* 전체 길이*/
+  height:600px;
+  padding-top: 20px;
+}
+/* ------------------------------------------------ 타이틀 */
+h2 {
+  margin: 15px;
+}
+.ast {
+  color: red;
+}
+.caution {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 12px;
+  float: right;
+  margin: 15px 0px 10px 0px;
+}
+/* ------------------------------------------------ 입력 폼 */
+.formSet {
+  display: inline-block;
+  padding-top: 30px;
+  border-top: 1px solid gray;
+}
+.formBox {
+  height: 30px;
+}
+.err_form {
+  width: 300px;
+  height: 1.5em;
+  margin-bottom: 5px;
+}
+.input_form {
+  float: right;
+  border:1px solid gray;
+  /* height: 20px; */
+  padding-left:5px;
+  margin-right: 2px;
+  background-color:white;
+  border-radius: 5px;
+  width: 200px;
+}
+.join-title{
+  text-align: center;
+}
+input { 
+  width: 190px;
+  height: 25px;
+  border:none;
+}
+input[type=radio] {
+  width:auto;
+  height:auto;
+}
+select{
+  /* 지역 선택 길이 */
+  width: 190px;
+	height: 25px;
+	border:none;
+}
+button{ 
+  /* 가입하기 길이*/
+  width: 200px;
+  height: 40px;
+  border:none;
+  border-radius: 5px;
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+}
+#button {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  border-top: 1px gray solid;
+}
+#modifyBtn {
+  background-color: #7b7b81;
+  border-radius: 5px;
+  color:white;
+  font-weight:900;
+  height:30px;
+  margin-left: 10px;
+}
+.input_choice {
+  height: 25px; 
+}
+#region {
+  font-size: 12px;
+}
+
+.label{
+  display: inline-block;
+  vertical-align: center;
+  width: 100px;
+  font-size: 14px;
+}
+i{
+  padding:5px 4px;
+}
+#memberout {
+  font-size: 0.8rem;
+  text-align: center;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+#memberout a {
+	text-decoration: none;
+	color: gray;
+}
+
+
+.errmsg {
+  color:red;
+  font-size:0.7rem;
+  font-weight:bold; 
+  width: 300px;       
+  height: 150px;
+}
+
+
