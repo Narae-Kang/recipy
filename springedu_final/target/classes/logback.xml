@@ -12,7 +12,7 @@
     
  <!-- file로 log 남기기 -->   
     <appender name="file" class="ch.qos.logback.core.FileAppender">
-        <file>d:\logs\springFile.log</file>
+        <file>c:\logs\springFile.log</file>
         <append>true</append>
         <encoder>
             <pattern>
@@ -24,9 +24,9 @@
     
 <!-- 파일롤링:날짜별/시간별 로깅파일 분리 -->    
     <appender name="dailyRolling" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>d:\logs\springRollingFile.log</file>
+        <file>c:\logs\springRollingFile.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-           <fileNamePattern>d:\logs\springRollingFile.%d{yyyy-MM-dd-HH}.log</fileNamePattern>
+           <fileNamePattern>c:\logs\springRollingFile.%d{yyyy-MM-dd-HH}.log</fileNamePattern>
            <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
